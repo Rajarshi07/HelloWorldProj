@@ -1,4 +1,4 @@
-package day5;
+package assignment1_d5;
 
 public class TesterBank {
 
@@ -11,9 +11,9 @@ public class TesterBank {
 		Bank a=new BankA();
 		Bank b=new BankB();
 		Bank c=new BankC();
-		a.deposit(100);
-		b.deposit(150);
-		c.deposit(200);
+		a.deposit(500);
+		b.deposit(200);
+		c.deposit(100);
 		System.out.println(a.getBalance());
 		System.out.println(b.getBalance());
 		System.out.println(c.getBalance());

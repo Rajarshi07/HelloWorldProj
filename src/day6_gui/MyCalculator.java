@@ -11,13 +11,13 @@ public class MyCalculator implements ActionListener {
 	JFrame f;// =new JFrame();
 	JTextField t;
 	JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, badd, bsub, bdiv, bmul, bdec, beq, bdel, bclr;
-	static Double a = 0.0, b = 0.0, res = 0.0;
-	static Character o = 'n';
-	static Integer dec = 0;
+	static String b="",o="";
+	
 
 	public MyCalculator() {
 		// TODO Auto-generated constructor stub
-		f = new JFrame("MY Calculator");
+		f = new JFrame("Rajarshi Calculator");
+		
 		f.setVisible(true);
 		f.setLayout(null);
 		f.setBounds(20, 20, 290, 500);
@@ -28,6 +28,7 @@ public class MyCalculator implements ActionListener {
 		t.setBackground(Color.BLUE);
 		t.setForeground(Color.WHITE);
 		t.setBounds(20, 20, 230, 60);
+		t.setText("0");
 		f.add(t);
 		b1 = new JButton("1");
 		b2 = new JButton("2");
@@ -65,7 +66,29 @@ public class MyCalculator implements ActionListener {
 		beq.setBounds(200, 300, 50, 50);
 		bdel.setBounds(20, 360, 110, 50);
 		bclr.setBounds(140, 360, 110, 50);
+		
+		
+		
 
+		b7.setVisible(true);
+		b8.setVisible(true);
+		b9.setVisible(true);
+		bdiv.setVisible(true);
+		b4.setVisible(true);
+		b5.setVisible(true);
+		b6.setVisible(true);
+		bmul.setVisible(true);
+		b1.setVisible(true);
+		b2.setVisible(true);
+		b3.setVisible(true);
+		bsub.setVisible(true);
+		b0.setVisible(true);
+		bdec.setVisible(true);
+		badd.setVisible(true);
+		beq.setVisible(true);
+		bdel.setVisible(true);
+		bclr.setVisible(true);
+		
 		b7.addActionListener(this);
 		b8.addActionListener(this);
 		b9.addActionListener(this);
@@ -105,107 +128,172 @@ public class MyCalculator implements ActionListener {
 		f.add(bclr);
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		MyCalculator c = new MyCalculator();
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==b1) {
-			if(dec==0) {
-				a*=10;a+=1;
-			}
-			else {
-				a=a+(1/dec)*1;
-				dec*=10;
-			}
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("1"));
 			return;
 		}
 		if(e.getSource()==b2) {
-			a*=10;a+=2;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("2"));
 			return;
 		}
 		if(e.getSource()==b3) {
-			a*=10;a+=3;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("3"));
 			return;
 		}
 		if(e.getSource()==b4) {
-			a*=10;a+=4;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("4"));
 			return;
 		}
 		if(e.getSource()==b5) {
-			a*=10;a+=5;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("5"));
 			return;
 		}
 		if(e.getSource()==b6) {
-			a*=10;a+=6;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("6"));
 			return;
 		}
 		if(e.getSource()==b7) {
-			a*=10;a+=7;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("7"));
 			return;
 		}
 		if(e.getSource()==b8) {
-			a*=10;a+=8;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("8"));
 			return;
 		}
 		if(e.getSource()==b9) {
-			a*=10;a+=9;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.isEmpty()||x.matches("0"))x="";
+			t.setText(x.concat("9"));
 			return;
 		}
 		if(e.getSource()==b0) {
-			a*=10;a+=0;
-			t.setText(a.toString());
-			return;
-		}
-		if(e.getSource()==badd) {
-			b=a;
-			o='+';
-			a=0.0;
-			dec=0;
-			t.setText(a.toString());
-			return;
-		}
-		if(e.getSource()==bsub) {
-			b=a;
-			o='-';
-			a=0.0;
-			dec=0;
-			t.setText(a.toString());
-			return;
-		}
-		if(e.getSource()==bmul) {
-			b=a;
-			o='*';
-			a=0.0;
-			dec=0;
-			t.setText(a.toString());
-			return;
-		}
-		if(e.getSource()==bdiv) {
-			b=a;
-			o='/';
-			a=0.0;
-			dec=0;
-			t.setText(a.toString());
+			String x = t.getText();
+			if(x.matches("0"))return;
+			t.setText(x.concat("0"));
 			return;
 		}
 		if(e.getSource()==bdec) {
-			dec=10;
+			String x = t.getText();
+			if(x.contains("."))
+				return;
+			if(x.isEmpty())x="0";
+			t.setText(x.concat("."));
+			return;
+		}
+		if(e.getSource()==badd) {
+			o="+";
+			if(b.isBlank()) {
+				b=t.getText();
+				t.setText("0");
+				return;
+			}else {
+				calcEql();
+				return;
+			}
+		}
+		if(e.getSource()==bsub) {
+			o="-";
+			if(b.isBlank()) {
+				b=t.getText();
+				t.setText("0");
+				return;
+			}else {
+				calcEql();
+				return;
+			}
+		}
+		if(e.getSource()==bmul) {
+			o="*";
+			if(b.isBlank()) {
+				b=t.getText();
+				t.setText("0");
+				return;
+			}else {
+				calcEql();
+				return;
+			}
+		}
+		if(e.getSource()==bdiv) {
+			o="/";
+			if(b.isBlank()) {
+				b=t.getText();
+				t.setText("0");
+				return;
+			}else {
+				calcEql();
+				return;
+			}
+		}
+		if(e.getSource()==bdel) {
+			String x = t.getText();
+			if(x.matches("0"))return;
+			if(x.isBlank())x="0";
+			x=x.substring(0, x.length() -1);
+			t.setText(x);
+			return;
+		}
+		if(e.getSource()==bclr) {
+			t.setText("0");
+			b="";
+			o="";
+			return;
+		}
+		if(e.getSource()==beq) {
+			calcEql();
 			return;
 		}
 		
 	}
+	public void calcEql() {
+		if(o.isBlank())return;
+		String x=t.getText();
+		double d1=Double.parseDouble(x);
+		double d2=Double.parseDouble(b);
+		System.out.println(d1);
+		System.out.println(d2);
+		System.out.println(o);
+		Double res=0d;
+		try {
+			if(o.equals("+")) res=d2+d1;
+			else if(o.equals("-"))res=d2-d1;
+			else if(o.equals("*"))res=d2*d1;
+			else if(o.equals("/"))res=d2/d1;
+			t.setText(res.toString());
+			b="";
+			o="";
+		}catch(ArithmeticException e) {
+			t.setText("Error");
+			return;
+		}
+	}
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			// set look and feel
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		MyCalculator c = new MyCalculator();
+	}
 }

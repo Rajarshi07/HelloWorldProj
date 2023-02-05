@@ -23,7 +23,7 @@ public class Order {
 		// TODO Auto-generated method stub
 		
 		l1.order(5);
-		l1.order(10);
+		l1.order(8);
 		l2.order(2);
 
 	}

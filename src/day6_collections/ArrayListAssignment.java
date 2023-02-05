@@ -120,3 +120,78 @@ public class ArrayListAssignment {
 		a.menu();
 	}
 }
+
+/* OUTPUT
+
+1. Insert
+2.Display
+3.Search
+4.Delete
+5.Update
+6.Exit
+Enter Your Choice: 1
+Id:1
+Name:A
+Salary:25000
+Added
+1. Insert
+2.Display
+3.Search
+4.Delete
+5.Update
+6.Exit
+Enter Your Choice: 1
+Id:2
+Name:B
+Salary:25000
+Added
+1. Insert
+2.Display
+3.Search
+4.Delete
+5.Update
+6.Exit
+Enter Your Choice: 3
+Search
+Enter Id:2
+Employee [empId=2, name=B, salary=25000.0]
+1. Insert
+2.Display
+3.Search
+4.Delete
+5.Update
+6.Exit
+Enter Your Choice: 4
+Delete
+Enter Id:1
+Deleted
+1. Insert
+2.Display
+3.Search
+4.Delete
+5.Update
+6.Exit
+Enter Your Choice: 5
+Update
+Enter Id:2
+Name:RGD
+Salary:50000
+Updated Successfully
+Not Found
+1. Insert
+2.Display
+3.Search
+4.Delete
+5.Update
+6.Exit
+Enter Your Choice: 2
+Employee [empId=2, name=RGD, salary=50000.0]
+1. Insert
+2.Display
+3.Search
+4.Delete
+5.Update
+6.Exit
+Enter Your Choice: 6
+Exiting...
+*/

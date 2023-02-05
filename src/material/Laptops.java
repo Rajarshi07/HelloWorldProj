@@ -25,14 +25,20 @@ public class Laptops extends Inventory {
 	public void printInvoice(int qty) {
 		// TODO Auto-generated method stub
 		super.printInvoice(qty);
-		System.out.println("Invoice for "+brand+" "+model+" " +"("+processor+", "+ram+"GB/"+storage+"GB) x"+qty);
-		System.out.println("Total: "+price*qty);
+		System.out.print("Invoice for "+brand+" "+model+" " +"("+processor+", "+ram+"GB/"+storage+"GB) x"+qty);
+		System.out.println("  Total: "+price*qty);
+	}
+	@Override
+	public String toString() {
+		return "Laptops [uId=" + uId + ", brand=" + brand + ", model=" + model + ", processor=" + processor + ", ram="
+				+ ram + ", storage=" + storage + ", price=" + price + ", quantity=" + getQuantity()
+				+ ", lowLevelOrderQuantity=" + getLowLevelOrderQuantity() + "]";
 	}
 	@Override
 	public void generateRFM() {
 		// TODO Auto-generated method stub
 		super.generateRFM();
-		System.out.println("RFM for "+uId);
+		System.out.println("GENERATING RFM\n"+this.toString());
 	}
 
 }
